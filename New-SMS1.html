@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <script>
+    // Set the traffic source
+    const source = "sms"; //
+
+    // Set the base URL of the affiliate offer
+    const baseUrl = "https://connect.astrkd.com/click?pid=6471&offer_id=11310";
+
+    // Function to generate a unique click ID
+    function generateClickID() {
+      const timestamp = Date.now();
+      const random = Math.floor(Math.random() * 100000);
+      return `${source}_${timestamp}_${random}`;
+    }
+
+    // Redirect when the page loads
+    window.onload = function () {
+      const clickID = generateClickID();
+      const finalUrl = `${baseUrl}&sub1=${source}&sub2=${clickID}`;
+      window.location.href = finalUrl;
+    };
+  </script>
+</head>
+<body>
+  <p>Redirecting to offer...</p>
+</body>
+</html>
